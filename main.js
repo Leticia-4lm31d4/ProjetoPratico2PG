@@ -63,6 +63,20 @@ const terra = new THREE.Mesh(terraGeometry, terraMaterial);
 terra.position.set(8,0,0);
 scene.add(terra);
 
+// Mercúrio
+const mercurioGeometry = new THREE.SphereGeometry(0.2, 32, 32); 
+const mercurioNormalMap = textureLoader.load('/texturas/mercurio/mercuryNormal.jpeg');
+const mercurioBumpMap = textureLoader.load('/texturas/mercurio/mercuryBump.png');
+
+const mercurioMaterial = new THREE.MeshStandardMaterial({
+    map: mercurioNormalMap,
+    bumpMap: mercurioBumpMap,
+  }
+);
+
+const mercurio = new THREE.Mesh(mercurioGeometry, mercurioMaterial);
+mercurio.position.set(4,0,0);
+scene.add(mercurio);
 
 // Venus
 const venusGeometry = new THREE.SphereGeometry(0.5, 32, 32); 
