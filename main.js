@@ -160,8 +160,8 @@ function animate() {
 	// Atualizar a câmera ativa
 	const camera_atual = cameras[index_camera];
 
-  terra.position.x = Math.cos(time * terraOrbitSpeed) * 9;
-  terra.position.z = Math.sin(time * terraOrbitSpeed) * 9;
+  terra.position.x = Math.cos(time * terraOrbitSpeed) * 8;
+  terra.position.z = Math.sin(time * terraOrbitSpeed) * 8;
 
   mercurio.position.x = Math.cos(time * terraOrbitSpeed * 4.14) * 4; // 88 dias
   mercurio.position.z = Math.sin(time * terraOrbitSpeed * 4.14) * 4;
