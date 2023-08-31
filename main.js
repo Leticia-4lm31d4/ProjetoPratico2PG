@@ -11,3 +11,16 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 // Linkando renderizador com o html
 document.body.appendChild( renderer.domElement ); // codigo javascript main
+
+// Loop de renderização => Animar a cena
+function animate() {
+	requestAnimationFrame( animate );
+
+	// Translação
+
+	// Rotação
+
+	renderer.render( scene, camera_atual);
+}
+// Chamando a func de renderizador
+animate();
