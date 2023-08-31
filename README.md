@@ -18,7 +18,7 @@ Esse projeto tem como objetivo criar a visualização de uma cena 3D que represe
 ### Modo de interação
 Para interagir com o projeto:
 1. Clonar o repositório<br>
-```git clone https://github.com/Leticia-4lm31d4/PP2.git```
+```git clone https://github.com/Leticia-4lm31d4/ProjetoPratico2PG/```
 2. Executar o arquivo:<br> 
 ``` 1. index.html``` <br>
 ``` 2. Para abrir: Utilizamos o Live server com o VSCode```<br>
