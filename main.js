@@ -7,7 +7,6 @@ const camera_frontal = new THREE.PerspectiveCamera( 50, window.innerWidth / wind
 
 // Config Renderizador
 const renderer = new THREE.WebGLRenderer();
-renderer.
 // Tamanho da tela
 renderer.setSize( window.innerWidth, window.innerHeight );
 // Linkando renderizador com o html
