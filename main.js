@@ -39,3 +39,26 @@ function animate() {
 }
 // Chamando a func de renderizador
 animate();
+
+
+// Construindo Objetos / Modelos
+const coordenadas = new THREE.AxesHelper(5);
+scene.add(coordenadas);
+// Para aplicar texturas
+const textureLoader = new THREE.TextureLoader();
+
+// Terra
+const terraGeometry = new THREE.SphereGeometry(0.55, 32, 32);
+
+const terraNormalMap = textureLoader.load('/texturas/terra/terraNormal.jpeg');
+const terraBumpMap = textureLoader.load('/texturas/terra/terraBump.jpeg');
+
+const terraMaterial = new THREE.MeshStandardMaterial({
+    map: terraNormalMap,
+    bumpMap: terraBumpMap,
+  }
+);
+
+const terra = new THREE.Mesh(terraGeometry, terraMaterial);
+terra.position.set(8,0,0);
+scene.add(terra);
