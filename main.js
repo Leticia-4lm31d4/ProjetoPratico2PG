@@ -130,6 +130,20 @@ function animate() {
 	requestAnimationFrame( animate );
 
 	// Translação
+  const time = Date.now() * 0.001; // Tempo em segundos
+  const terraOrbitSpeed = 0.2; // 365 dias
+
+  terra.position.x = Math.cos(time * terraOrbitSpeed) * 9;
+  terra.position.z = Math.sin(time * terraOrbitSpeed) * 9;
+
+  mercurio.position.x = Math.cos(time * terraOrbitSpeed * 4.14) * 4; // 88 dias
+  mercurio.position.z = Math.sin(time * terraOrbitSpeed * 4.14) * 4;
+
+  venus.position.x = Math.cos(time * terraOrbitSpeed * 1.62) * 6; // 224,7 dias
+  venus.position.z = Math.sin(time * terraOrbitSpeed * 1.62) * 6;
+
+  marte.position.x = Math.cos(time * terraOrbitSpeed * 1.88) * 10; // 687 dias
+  marte.position.z = Math.sin(time * terraOrbitSpeed * 1.88) * 10;
 
   // Rotação dos planetas e do SOl em seus eixos
   sol.rotation.y += 0.0037; //25 dias para o sol girar em seu eixo (1/25)
