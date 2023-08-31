@@ -125,6 +125,25 @@ const marte = new THREE.Mesh(marteGeometry, marteMaterial);
 marte.position.set(10,0,0);
 scene.add(marte);
 
+// Alternando entre as cameras de modo automatico
+const cameras = [camera_superior, camera_diagonal, camera_frontal];
+
+let index_camera = 0;
+const mudarCamera = () => {
+    index_camera = (index_camera + 1) % cameras.length;
+  };
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') 
+    {
+        mudarCamera();
+    } else if (event.key === 'ArrowRight') 
+    {
+        mudarCamera();
+    }
+  }
+);
+
 // Loop de renderização => Animar a cena
 function animate() {
 	requestAnimationFrame( animate );
@@ -132,6 +151,10 @@ function animate() {
 	// Translação
   const time = Date.now() * 0.001; // Tempo em segundos
   const terraOrbitSpeed = 0.2; // 365 dias
+  
+	
+	// Atualizar a câmera ativa
+	const camera_atual = cameras[index_camera];
 
   terra.position.x = Math.cos(time * terraOrbitSpeed) * 9;
   terra.position.z = Math.sin(time * terraOrbitSpeed) * 9;
