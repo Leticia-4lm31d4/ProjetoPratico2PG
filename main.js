@@ -27,19 +27,6 @@ camera_frontal.position.set(0, 0, 15);
 camera_frontal.lookAt(scene.position);
 camera_frontal.updateMatrixWorld();
 
-// Loop de renderização => Animar a cena
-function animate() {
-	requestAnimationFrame( animate );
-
-	// Translação
-
-	// Rotação
-
-	renderer.render( scene, camera_atual);
-}
-// Chamando a func de renderizador
-animate();
-
 
 // Construindo Objetos / Modelos
 const coordenadas = new THREE.AxesHelper(5);
@@ -108,3 +95,20 @@ const marte = new THREE.Mesh(marteGeometry, marteMaterial);
 marte.position.set(10,0,0);
 scene.add(marte);
 
+// Loop de renderização => Animar a cena
+function animate() {
+	requestAnimationFrame( animate );
+
+	// Translação
+
+  // Rotação dos planetas e do SOl em seus eixos
+  sol.rotation.y += 0.0037; //25 dias para o sol girar em seu eixo (1/25)
+  terra.rotation.y += 0.01; // terra gira em 1 dia em seu eixo (1/1)
+  mercurio.rotation.y += 0.0017 // mercurio demora 59 dias (1/59)
+  venus.rotation.y += 0.00041 //venus demora 243,0226 dias (1/243,0226)
+  marte.rotation.y += 0.009 // marte demora 24h e 37 min
+
+	renderer.render( scene, camera_atual);
+}
+// Chamando a func de renderizador
+animate();
