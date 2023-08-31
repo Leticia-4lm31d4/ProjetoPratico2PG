@@ -144,6 +144,10 @@ document.addEventListener('keydown', (event) => {
   }
 );
 
+// Iluminação
+var ambientLight = new THREE.AmbientLight(0xffffff, 2.5);
+scene.add(ambientLight);
+
 // Loop de renderização => Animar a cena
 function animate() {
 	requestAnimationFrame( animate );
