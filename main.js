@@ -62,3 +62,35 @@ const terraMaterial = new THREE.MeshStandardMaterial({
 const terra = new THREE.Mesh(terraGeometry, terraMaterial);
 terra.position.set(8,0,0);
 scene.add(terra);
+
+
+// Venus
+const venusGeometry = new THREE.SphereGeometry(0.5, 32, 32); 
+const venusNormalMap = textureLoader.load('/texturas/venus/venusNormal.jpeg');
+const venusBumpMap = textureLoader.load('/texturas/venus/venusBump.png');
+
+const venusMaterial = new THREE.MeshStandardMaterial({
+    map: venusNormalMap,
+    bumpMap: venusBumpMap,
+  }
+);
+
+const venus = new THREE.Mesh(venusGeometry, venusMaterial);
+venus.position.set(6,0,0);
+scene.add(venus);
+
+// Marte
+const marteGeometry = new THREE.SphereGeometry(0.4, 32, 32); 
+const marteNormalMap = textureLoader.load('/texturas/marte/marsNormal.jpeg');
+const marteBumpMap = textureLoader.load('/texturas/marte/marsBump.png');
+
+const marteMaterial = new THREE.MeshStandardMaterial({
+    map: marteNormalMap,
+    bumpMap: marteBumpMap,
+  }
+);
+
+const marte = new THREE.Mesh(marteGeometry, marteMaterial);
+marte.position.set(10,0,0);
+scene.add(marte);
+
